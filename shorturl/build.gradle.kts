@@ -23,6 +23,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+	implementation("org.hashids:hashids:1.0.1")
+
 	// apache curator
 	implementation("org.apache.curator:curator-framework:5.3.0")
 	implementation("org.apache.curator:curator-recipes:5.3.0")
