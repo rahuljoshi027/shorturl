@@ -1,7 +1,6 @@
-package com.shorturl.domain.url
+package com.shorturl.domain.url.service
 
 import com.shorturl.domain.url.exception.BadLongUrlException
-import com.shorturl.domain.url.service.ShortUrlService
 import com.shorturl.generated.model.MakeShortUrlResponse
 import com.shorturl.zookeeper.kafka.model.UrlInfo
 import com.shorturl.zookeeper.kafka.producer.KafkaUrlInfoProducer
