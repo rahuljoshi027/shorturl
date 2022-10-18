@@ -23,6 +23,11 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+	// apache curator
+	implementation("org.apache.curator:curator-framework:5.3.0")
+	implementation("org.apache.curator:curator-recipes:5.3.0")
+	implementation("org.apache.curator:curator-x-discovery:5.3.0")
+
 	// swagger open api
 	implementation("io.swagger.core.v3:swagger-annotations:2.2.3")
 	implementation("io.swagger.parser.v3:swagger-parser:2.1.3")
@@ -33,6 +38,7 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-kotlin:1.6.11")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.apache.curator:curator-test:5.3.0")
 }
 
 openApiGenerate {
