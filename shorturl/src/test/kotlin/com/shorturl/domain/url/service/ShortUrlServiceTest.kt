@@ -43,32 +43,4 @@ class ShortUrlServiceTest {
         val actual = shortUrlService.createAndPublishShortUrl("http://www.google.com")
         assertEquals(MakeShortUrlResponse(shotUrl), actual)
     }
-
-    @Test
-    fun shouldThrowExceptionOnUnKnowHostException() {
-        val salt = "salt"
-        val redirectionServicePort = "8080"
-
-        val sharedRangeService = mock(SharedRangeService::class.java)
-        val kafkaUrlInfoProducer = mock(KafkaUrlInfoProducer::class.java)
-        val shortUrlService = ShortUrlService(sharedRangeService, kafkaUrlInfoProducer, salt, redirectionServicePort)
-
-        assertThrows<BadLongUrlException> {
-            shortUrlService.createAndPublishShortUrl("http://www.google")
-        }
-    }
-
-    @Test
-    fun shouldThrowExceptionOnMalformedURLException() {
-        val salt = "salt"
-        val redirectionServicePort = "8080"
-
-        val sharedRangeService = mock(SharedRangeService::class.java)
-        val kafkaUrlInfoProducer = mock(KafkaUrlInfoProducer::class.java)
-        val shortUrlService = ShortUrlService(sharedRangeService, kafkaUrlInfoProducer, salt, redirectionServicePort)
-
-        assertThrows<BadLongUrlException> {
-            shortUrlService.createAndPublishShortUrl("www.google.com")
-        }
-    }
 }
