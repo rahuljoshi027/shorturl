@@ -4,6 +4,8 @@ import com.shorturl.domain.url.exception.BadLongUrlException
 import com.shorturl.domain.url.exception.URLPingException
 import com.shorturl.domain.url.model.ShortUrl
 import com.shorturl.generated.model.MakeShortUrlResponse
+import com.shorturl.zookeeper.kafka.model.UrlInfo
+import com.shorturl.zookeeper.kafka.producer.KafkaUrlInfoProducer
 import com.shorturl.zookeeper.service.SharedRangeService
 import org.hashids.Hashids
 import org.slf4j.LoggerFactory
@@ -18,6 +20,7 @@ import java.net.*
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 class ShortUrlService(
     private val sharedRangeService: SharedRangeService,
+    private val kafkaUrlInfoProducer: KafkaUrlInfoProducer,
     @Value("\${hashids.start.salt}") val hashSalt: String,
     @Value("\${redirection.service.port}") val redirectionServicePort: String
 ) {
@@ -28,9 +31,14 @@ class ShortUrlService(
     fun createAndPublishShortUrl(longUrl: String): MakeShortUrlResponse {
         pingUrl(longUrl)
         val shortUrl = createShortUrl()
-        // Todo publish
+        publish(shortUrl, longUrl)
         logger.info("created short url successfully")
         return MakeShortUrlResponse(shortUrl.url)
+    }
+
+    private fun publish(shortUrl: ShortUrl, longUrl: String) {
+        kafkaUrlInfoProducer.sendMessage(UrlInfo(shortUrl.hash, longUrl))
+        logger.info("published url info successfully")
     }
 
     private fun createShortUrl(): ShortUrl {

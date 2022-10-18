@@ -25,6 +25,10 @@ dependencies {
 
 	implementation("org.hashids:hashids:1.0.1")
 
+	// kafka
+	implementation("org.apache.kafka:kafka-streams")
+	implementation("org.springframework.kafka:spring-kafka")
+
 	// apache curator
 	implementation("org.apache.curator:curator-framework:5.3.0")
 	implementation("org.apache.curator:curator-recipes:5.3.0")
@@ -39,6 +43,8 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.11")
 	implementation("org.springdoc:springdoc-openapi-kotlin:1.6.11")
 
+	testImplementation("org.springframework.kafka:spring-kafka-test")
+	testImplementation("org.apache.kafka:kafka-streams-test-utils:3.3.1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.apache.curator:curator-test:5.3.0")
 }
