@@ -1,0 +1,8 @@
+.openapi-generator-ignore
+README.md
+pom.xml
+src/main/kotlin/com/shorturl/generated/api/ApiUtil.kt
+src/main/kotlin/com/shorturl/generated/api/Exceptions.kt
+src/main/kotlin/com/shorturl/generated/api/V1Api.kt
+src/main/kotlin/com/shorturl/generated/model/MakeShortUrlRequest.kt
+src/main/kotlin/com/shorturl/generated/model/MakeShortUrlResponse.kt

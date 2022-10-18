@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: Short URL
+  description: |-
+    Short URL
+  version: 1.0.0
+
+paths:
+  /v1/url/makeshort:
+    post:
+      summary: Accepts a url to make it short
+      operationId: makeUrlShort
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/makeShortUrlRequest'
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/makeShortUrlResponse'
+        '400':
+          description: invalid input
+        '500':
+          description: Unhandled error by server
+
+components:
+  schemas:
+    makeShortUrlRequest:
+      type: object
+      required:
+        - url
+      description: coantain url from client
+      properties:
+        url:
+          type: string
+          format: url
+          example: "http://abc.com/"
+
+    makeShortUrlResponse:
+      type: object
+      description: coantain short url
+      properties:
+        shortUrl:
+          type: string
+          example: "http://mydomain.com/1234abcd"
