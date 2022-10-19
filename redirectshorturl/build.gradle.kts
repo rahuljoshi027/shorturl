@@ -32,7 +32,19 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-ui:1.6.11")
 	implementation("org.springdoc:springdoc-openapi-kotlin:1.6.11")
 
+	// kafka
+	implementation("org.apache.kafka:kafka-streams")
+	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.apache.curator:curator-framework:5.3.0")
+	implementation("org.apache.curator:curator-recipes:5.3.0")
+	implementation("org.apache.curator:curator-x-discovery:5.3.0")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
+	testImplementation("org.springframework.kafka:spring-kafka-test")
+	testImplementation("org.apache.kafka:kafka-streams-test-utils:3.3.1")
+	testImplementation("org.apache.curator:curator-test:5.3.0")
+	testImplementation("org.testcontainers:kafka:1.15.3")
 
 }
 
