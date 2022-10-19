@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: Short URL Redirection
+  description: |-
+    Short URL
+  version: 1.0.0
+
+paths:
+  /v1/{key}:
+    get:
+      summary: will redirect to long URL
+      operationId: redirectToLongUrl
+      parameters:
+        - name: key
+          in: path
+          description: hash id for long URL
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '302':
+          description: redirect to long URL
+        '404':
+          description: Not found
