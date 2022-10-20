@@ -1,4 +1,4 @@
-package com.refirect.generated.api
+package com.redirect.generated.api
 
 import org.springframework.web.context.request.NativeWebRequest
 

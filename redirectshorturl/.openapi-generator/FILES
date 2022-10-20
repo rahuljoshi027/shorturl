@@ -1,6 +1,5 @@
-.openapi-generator-ignore
 README.md
 pom.xml
-src/main/kotlin/com/refirect/generated/api/ApiUtil.kt
-src/main/kotlin/com/refirect/generated/api/Exceptions.kt
-src/main/kotlin/com/refirect/generated/api/V1Api.kt
+src/main/kotlin/com/redirect/generated/api/ApiUtil.kt
+src/main/kotlin/com/redirect/generated/api/Exceptions.kt
+src/main/kotlin/com/redirect/generated/api/V1Api.kt

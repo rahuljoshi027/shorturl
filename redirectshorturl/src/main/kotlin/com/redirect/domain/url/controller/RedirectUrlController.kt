@@ -1,7 +1,7 @@
 package com.redirect.domain.url.controller
 
 import com.redirect.domain.url.service.FetchLongUrlService
-import com.refirect.generated.api.V1Api
+import com.redirect.generated.api.V1Api
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController

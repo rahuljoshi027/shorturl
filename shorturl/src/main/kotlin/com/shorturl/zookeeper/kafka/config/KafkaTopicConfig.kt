@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.kafka.core.KafkaAdmin
 
 @Configuration
-class KafkaTopicConfig(@Value("\${kafka.bootstrap.address}") val bootstrapAddress: String) {
+class KafkaTopicConfig(@Value("\${spring.kafka.bootstrap-servers}") val bootstrapAddress: String) {
 
     companion object {
         const val publicUrlInfoTopic = "public.url-info-topic.v1"

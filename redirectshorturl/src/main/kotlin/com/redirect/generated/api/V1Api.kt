@@ -3,7 +3,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
 */
-package com.refirect.generated.api
+package com.redirect.generated.api
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType

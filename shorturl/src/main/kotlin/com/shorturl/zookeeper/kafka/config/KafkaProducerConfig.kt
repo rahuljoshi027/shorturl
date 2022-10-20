@@ -7,7 +7,7 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.core.ProducerFactory
 
-class KafkaProducerConfig(@Value("\${kafka.bootstrap.address}") val bootstrapAddress: String) {
+class KafkaProducerConfig(@Value("\${spring.kafka.bootstrap-servers}") val bootstrapAddress: String) {
     @Bean
     fun producerFactory(): ProducerFactory<String, String> {
         val configProps: MutableMap<String, Any> = HashMap()

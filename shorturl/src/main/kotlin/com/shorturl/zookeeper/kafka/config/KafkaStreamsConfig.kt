@@ -12,7 +12,7 @@ import org.springframework.kafka.config.KafkaStreamsConfiguration
 
 @Configuration
 @EnableKafka
-class kafaStreamsConfig(@Value("\${kafka.bootstrap.address}") val bootstrapAddress: String) {
+class kafaStreamsConfig(@Value("\${spring.kafka.bootstrap-servers}") val bootstrapAddress: String) {
 
     @Bean(name = [KafkaStreamsDefaultConfiguration.DEFAULT_STREAMS_CONFIG_BEAN_NAME])
     fun kStreamsConfig(): KafkaStreamsConfiguration? {

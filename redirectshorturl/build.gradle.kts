@@ -34,9 +34,6 @@ dependencies {
 	// kafka
 	implementation("org.apache.kafka:kafka-streams")
 	implementation("org.springframework.kafka:spring-kafka")
-	implementation("org.apache.curator:curator-framework:5.3.0")
-	implementation("org.apache.curator:curator-recipes:5.3.0")
-	implementation("org.apache.curator:curator-x-discovery:5.3.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
@@ -50,7 +47,7 @@ dependencies {
 openApiGenerate {
 	generatorName.set("kotlin-spring")
 	inputSpec.set("${projectDir}/src/main/resources/openapi.yml")
-	apiPackage.set("com.refirect.generated.api")
+	apiPackage.set("com.redirect.generated.api")
 	modelPackage.set("com.redirect.generated.model")
 	outputDir.set("$projectDir")
 	configOptions.put("interfaceOnly", "true")
