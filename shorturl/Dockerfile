@@ -5,5 +5,5 @@ RUN gradle build -x test
 
 FROM openjdk:17-jdk-alpine
 EXPOSE 8080
-ADD /build/libs/shorturl-0.0.1-SNAPSHOT.jar shorturl.jar
+COPY --from=build /home/gradle/src/build/libs/shorturl-0.0.1-SNAPSHOT.jar shorturl.jar
 ENTRYPOINT ["java", "-jar", "shorturl.jar"]

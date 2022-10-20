@@ -38,6 +38,7 @@ services:
       SPRING_KAFKA_BOOTSTRAP-SERVERS: "kafka1:9092"
       KAFKA_ZOOKEEPER_ADDRESS: "zookeeper:2181"
 
+
   redirecturl:
     depends_on:
       - zookeeper
@@ -50,3 +51,5 @@ services:
     environment:
       SPRING_KAFKA_BOOTSTRAP-SERVERS: "kafka1:9092"
       SERVER_PORT: "8081"
+
+
