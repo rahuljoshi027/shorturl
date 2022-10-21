@@ -34,6 +34,7 @@ dependencies {
 	// kafka
 	implementation("org.apache.kafka:kafka-streams")
 	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.rocksdb:rocksdbjni:7.6.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
