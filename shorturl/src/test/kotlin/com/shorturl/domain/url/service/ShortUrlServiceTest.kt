@@ -35,7 +35,7 @@ class ShortUrlServiceTest {
         val shotUrl = "http://$ip:$redirectionServicePort/v1/$hash"
         val sharedRangeService = mock(SharedRangeService::class.java)
         val kafkaUrlInfoProducer = mock(KafkaUrlInfoProducer::class.java)
-        val shortUrlService = ShortUrlService(sharedRangeService, kafkaUrlInfoProducer, salt, redirectionServicePort)
+        val shortUrlService = ShortUrlService(sharedRangeService, kafkaUrlInfoProducer, salt, redirectionServicePort,ip)
 
         Mockito.`when`(sharedRangeService.nextCounter()).thenReturn(99)
         Mockito.doNothing().`when`(kafkaUrlInfoProducer).sendMessage(urlInfo)

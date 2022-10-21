@@ -19,7 +19,8 @@ class ShortUrlService(
     private val sharedRangeService: SharedRangeService,
     private val kafkaUrlInfoProducer: KafkaUrlInfoProducer,
     @Value("\${hashids.start.salt}") val hashSalt: String,
-    @Value("\${redirection.service.port}") val redirectionServicePort: String
+    @Value("\${redirection.service.port}") val redirectionServicePort: String,
+    @Value("\${redirection.service.host}") val redirectionServiceHost: String
 ) {
     private val hashids = Hashids(hashSalt, 8)
     private val ip = InetAddress.getLocalHost().hostAddress
@@ -39,6 +40,6 @@ class ShortUrlService(
 
     private fun createShortUrl(): ShortUrl {
         val hash = hashids.encode(sharedRangeService.nextCounter())
-        return ShortUrl("http://$ip:$redirectionServicePort/v1/$hash", hash)
+        return ShortUrl("http://$redirectionServiceHost:$redirectionServicePort/v1/$hash", hash)
     }
 }
