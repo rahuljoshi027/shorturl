@@ -14,7 +14,8 @@ Project contains 2 microservices.
 
 How to start the app ?
 First way :- 
--- After cloning the repository , just use docker-compose up.
+-- After cloning the repository , replace the value of "REDIRECTION_SERVICE_HOST" in docker-compose.yml with your docker host ip.
+Simply execute "docker-compose up".
 This should build and start both services.
 
 -- Once services are up, swagger UI can be viewed on urls as follows :-
